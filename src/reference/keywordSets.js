@@ -94,6 +94,12 @@ export const camelCaseFunctionNames = new Set([
   "skewY",
 ])
 
+export const basicKeywords = new Set([
+  "initial",
+  "inherit",
+  "unset",
+])
+
 // cf. https://developer.mozilla.org/en-US/docs/Web/CSS/animation
 export const animationShorthandKeywords = new Set([
   "infinite",
@@ -340,6 +346,15 @@ export const listStyleTypeKeywords = new Set([
   "hangul",
   "hangul-consonant",
   "urdu",
+])
+
+export const listStylePositionKeywords = new Set([
+  "inside",
+  "outside",
+])
+
+export const listStyleImageKeywords = new Set([
+  "none",
 ])
 
 function uniteSets(...sets) {
