@@ -1,3 +1,7 @@
+# HEAD
+
+-   Fixed: `isStandardSyntaxDeclaration` no longer crashes in SCSS mixins.
+
 # 7.3.0
 
 -   Added: `processors` can accept options objects.

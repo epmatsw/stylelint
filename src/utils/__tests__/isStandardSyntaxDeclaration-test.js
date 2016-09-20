@@ -6,7 +6,7 @@ import test from "tape"
 
 test("isStandardSyntaxDeclaration", t => {
 
-  t.plan(21)
+  t.plan(22)
 
   rules("a { a: b }", decl => {
     t.ok(isStandardSyntaxDeclaration(decl), "standard prop and value")
@@ -31,6 +31,9 @@ test("isStandardSyntaxDeclaration", t => {
   })
   scssRules("a { --custom-property-set: { color: blue; } }", decl => {
     t.ok(isStandardSyntaxDeclaration(decl), "custom property set")
+  })
+  scssRules("@mixin my-thing { > div { color: blue; } }", decl => {
+    t.ok(isStandardSyntaxDeclaration(decl), "child selector inside mixin")
   })
   lessRules("a { @{var}: 10px; }", decl => {
     t.ok(isStandardSyntaxDeclaration(decl), "property with less variable interpolation (only)")
